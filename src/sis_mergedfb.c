@@ -1527,7 +1527,7 @@ SISMFBPointerMoved(SCRN_ARG_TYPE arg, int x, int y)
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 15
            {
 		double dx = x, dy = y;
-		miPointerSetPosition(inputInfo.pointer, Absolute, &dx, &dy);
+		miPointerSetPosition(inputInfo.pointer, Absolute, &dx, &dy, NULL, NULL);
 		x = (int)dx;
 		y = (int)dy;
 	   }

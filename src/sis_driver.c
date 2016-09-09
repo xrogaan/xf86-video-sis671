@@ -105,7 +105,8 @@
 #include "sis_regs.h"
 #include "sis_dac.h"
 
-#include <vidmodeproc.h>
+//#include <vidmodeproc.h>
+//#include <vidmodestr.h>
 
 #include "sis_driver.h"
 
@@ -11267,7 +11268,7 @@ SISHotkeySwitchCRT1Status(ScrnInfoPtr pScrn, int onoff)
  return TRUE;
 }
 /**************************************************************************/
-static Bool
+/*static Bool
 SISHotkeySwitchMode(ScrnInfoPtr pScrn, Bool adjust)
 {
    pointer hkeymode;
@@ -11283,22 +11284,22 @@ SISHotkeySwitchMode(ScrnInfoPtr pScrn, Bool adjust)
    if(!VidModeGetFirstModeline(pScrn->scrnIndex,&hkeymode,&dotClock))
    return FALSE;
   
-   do{   /* dotclock and hdisplay must given by parameters of 1024*768 */
+   do{   // dotclock and hdisplay must given by parameters of 1024*768 
        if((VidModeGetDotClock(pScrn->scrnIndex,dotclock)==dotClock)&&(VidModeGetModeValue(hkeymode,0)==hdisplay)) 
        {
              pScrn->virtualX = 1024;
 	     pScrn->virtualY = 768;
-	    /* pSiS->scrnPitch = 4096;
-	     pSiS->scrnOffset = 4096;*/
-	     pScrn->zoomLocked=0;/* try for xf86ZoomViewport.*/
+	    // pSiS->scrnPitch = 4096;
+	    // pSiS->scrnOffset = 4096;
+	     pScrn->zoomLocked=0;// try for xf86ZoomViewport.
 	     pScrn->display->virtualX = 1024;
 	     pScrn->display->virtualY = 768;   
-	    /* xf86RandRSetNewVirtualAndDimensions(pScreen,1024,768,0,0,0);*/  
+	    // xf86RandRSetNewVirtualAndDimensions(pScreen,1024,768,0,0,0);
 	     if(!VidModeSwitchMode(pScrn->scrnIndex,hkeymode))
              { 
 	            return FALSE;
 	     }	
-            /* xf86ZoomViewport(pScrn,1);*/	     
+            // xf86ZoomViewport(pScrn,1);    
        }
    
    } while(VidModeGetNextModeline(pScrn->scrnIndex,&hkeymode,&dotClock));   
@@ -11314,7 +11315,7 @@ SISHotkeySwitchMode(ScrnInfoPtr pScrn, Bool adjust)
 
    
    return TRUE;
-}
+}*/
 
 
 /**************************************************************************/
